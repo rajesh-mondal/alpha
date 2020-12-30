@@ -50,7 +50,7 @@
                             }
                             ?>
                         </p>
-                        <?php the_content(); ?>
+                        <?php the_excerpt(); ?>
 
                     </div>
                 </div>
@@ -61,6 +61,21 @@
     <?php
     }
     ?>
+
+    <div class="container post-pagination">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-8">
+                <?php
+                    the_posts_pagination(array(
+                        "screen_reader_text"=>' ',
+                        "prev_text" => "New Posts",
+                        "next_test" => "Old Posts"
+                    ));
+                ?>
+            </div>
+        </div>
+    </div>
 
 </div>
 <div class="footer">
