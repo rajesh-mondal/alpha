@@ -44,15 +44,18 @@
 							if (has_post_thumbnail()){
 								the_post_thumbnail("large",array("class"=>"img-fluid"));
 							}
+							the_content();
 							?>
                         </p>
-						<?php
-						the_content();
-						?>
-
                     </div>
+                    <?php if (comments_open()): ?>
+                        <div class="col-md-10 offset-md-1">
+                            <?php
+                            comments_template();
+                            ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
-
             </div>
         </div>
 
