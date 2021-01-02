@@ -27,6 +27,11 @@
 								the_post_thumbnail("large",array("class"=>"img-fluid"));
 							}
 							the_content();
+
+							next_post_link();
+							echo "<br/>";
+							previous_post_link();
+
 							?>
                         </p>
                     </div>
