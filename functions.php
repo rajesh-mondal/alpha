@@ -14,3 +14,19 @@ function alpha_assets(){
 }
 
 add_action("wp_enqueue_scripts","alpha_assets");
+
+function alpha_sidebar(){
+	register_sidebar(
+		array(
+			'name'          => __( 'Single Post Sidebar', 'alpha' ),
+			'id'            => 'sidebar-1',
+			'description'   => __( 'Right Sidebar for Single Post', 'alpha' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+}
+
+add_action("widgets_init","alpha_sidebar");
