@@ -11,8 +11,11 @@ function alpha_bootstrapping(){
 	add_theme_support("post-thumbnails");
 	add_theme_support("title-tag");
 	$alpha_custom_header_details = array(
-	        'header-text'           => true,
-	        'default-text-color'    => '#222',
+        'header-text'           => true,
+        'default-text-color'    => '#222',
+        'width'                 => 1200,
+        'height'                => 600,
+        'flex-height'           => true
     );
 	add_theme_support("custom-header", $alpha_custom_header_details);
 	$alpha_custom_logo_defaults = array(
