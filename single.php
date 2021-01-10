@@ -33,10 +33,11 @@
 									            echo '</a>';
 								            }
 								            the_content();
+								            wp_link_pages();
 
-								            next_post_link();
+								            /* next_post_link();
 								            echo "<br/>";
-								            previous_post_link();
+								            previous_post_link(); */
 
 								            ?>
                                         </p>
