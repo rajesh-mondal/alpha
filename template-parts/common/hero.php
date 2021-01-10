@@ -27,7 +27,7 @@
 	                        'menu_id'       => 'topmenucontainer',
 	                        'menu_class'    => 'list-inline text-center',
                         )
-                    )
+                    );
                     ?>
                 </div>
             </div>
