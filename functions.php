@@ -157,4 +157,4 @@ function alpha_post_class($classes){
 	unset($classes[array_search("format-audio", $classes)]);
 	return $classes;
 }
-add_filter("body_class","alpha_post_class");
+add_filter("post_class","alpha_post_class");
