@@ -146,3 +146,15 @@ function alpha_about_page_template_banner(){
 }
 
 add_action("wp_head","alpha_about_page_template_banner",12);
+
+function alpha_body_class($classes){
+    unset($classes[array_search("custom-background", $classes)]);
+    return $classes;
+}
+add_filter("body_class","alpha_body_class");
+
+function alpha_post_class($classes){
+	unset($classes[array_search("format-audio", $classes)]);
+	return $classes;
+}
+add_filter("body_class","alpha_post_class");
