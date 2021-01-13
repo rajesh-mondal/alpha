@@ -32,23 +32,36 @@ if ( ! is_active_sidebar( "sidebar-1" ) ) {
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <p>
+                                        <div class="slider">
+	                                        <?php
+	                                        if ( class_exists( 'Attachments' ) ) {
+		                                        $attachments = new Attachments( 'slider' );
+		                                        if ( $attachments->exist() ) {
+			                                        while ( $attachment = $attachments->get() ) { ?>
+                                                        <div>
+					                                        <?php echo $attachments->image( 'large' ); ?>
+                                                        </div>
+				                                        <?php
+			                                        }
+		                                        }
+	                                        }
+	                                        ?>
+                                        </div>
+                                        <div>
 											<?php
-											if ( has_post_thumbnail() ) {
-												$thumbnail_url = get_the_post_thumbnail_url( null, "large" );
-												printf( '<a href="%s" data-featherlight="image">', $thumbnail_url );
-												the_post_thumbnail( "large", array( "class" => "img-fluid" ) );
-												echo '</a>';
-											}
+						                    if ( !class_exists( 'Attachments' ) ) {
+							                    if ( has_post_thumbnail() ) {
+								                    $thumbnail_url = get_the_post_thumbnail_url( null, "large" );
+								                    printf( '<a href="%s" data-featherlight="image">', $thumbnail_url );
+								                    the_post_thumbnail( "large", array( "class" => "img-fluid" ) );
+								                    echo '</a>';
+							                    }
+						                    }
 											the_content();
 											wp_link_pages();
 
-											/* next_post_link();
-											echo "<br/>";
-											previous_post_link(); */
-
 											?>
-                                        </p>
+                                        </div>
                                     </div>
 
                                     <div class="authorsection">
