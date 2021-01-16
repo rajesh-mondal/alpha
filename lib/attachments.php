@@ -14,7 +14,7 @@ function alpha_attachments($attachments){
 	$args = array(
 		'label'         => 'Featured Slider',
 		'post_type'     => array('post'),
-		'filetype'      => array('image'),
+		'filetype'      => array("image"),
 		'note'          => 'Add Slider Images',
 		'button_text'   => __('Atach Files','alpha'),
 		'fields'        => $fields,

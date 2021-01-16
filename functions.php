@@ -41,10 +41,13 @@ function alpha_assets(){
     wp_enqueue_style("dashicons");
     wp_enqueue_style("tns-style","//cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css");
 	wp_enqueue_style("alpha", get_stylesheet_uri(),VERSION);
-	wp_enqueue_script("tns-js","//cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/min/tiny-slider.helper.ie8.js",null,"0.0.1",true);
+
+	wp_enqueue_script("tns-js","//cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js",null,"0.0.1",true);
 	wp_enqueue_script("featherlight-js","//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js",array("jquery"),"0.0.1",true);
-	wp_enqueue_script("a lpha_main",get_theme_file_uri("/assets/js/main.js"),array("jquery","featherlight-js"),VERSION,true);
-	//wp_enqueue_script("alpha_main",get_template_directory_uri()."/assets/js/main.js",null,"0.0.1",true);
+	wp_enqueue_script("alpha-main2",get_theme_file_uri("/assets/js/main.js"),array(
+	    "jquery",
+        "featherlight-js"
+        ),VERSION,true);
 }
 
 add_action("wp_enqueue_scripts","alpha_assets");
