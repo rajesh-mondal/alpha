@@ -57,6 +57,14 @@ if ( ! is_active_sidebar( "sidebar-1" ) ) {
 								                    echo '</a>';
 							                    }
 						                    }
+//						                    the_post_thumbnail("alpha-square");
+//						                    echo "<br/>";
+//											the_post_thumbnail("alpha-portrait");
+//											echo "<br/>";
+//											the_post_thumbnail("alpha-landscape");
+//											echo "<br/>";
+//											the_post_thumbnail("alpha-landscape-hard-cropped");
+
 											the_content();
 											wp_link_pages();
 
