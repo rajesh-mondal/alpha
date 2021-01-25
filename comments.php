@@ -13,6 +13,17 @@
     <div class="comments-list">
 		<?php
 		wp_list_comments();
+		?>
+	    <div class="comments-pagination">
+		    <?php
+		    the_comments_pagination(array(
+			    'screen_reader_text' => __( 'Pagination', 'alpha' ),
+			    'prev_text'          => '<' . __( 'Previous Comments', 'alpha' ),
+			    'next_text'          => '>' . __( 'Next Comments', 'alpha' ),
+		    ));
+		    ?>
+	    </div>
+	    <?php
 		if ( ! comments_open() ) {
 			_e( "Comments are closed.", "alpha" );
 		}
