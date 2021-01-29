@@ -8,10 +8,14 @@
 <?php get_template_part( "/template-parts/common/hero" ); ?>
     <div class="posts text-center">
 		<?php
+		$paged = get_query_var( "paged" ) ? get_query_var( "paged" ) : 1;
+		$posts_per_page = 2;
+		$post_ids = array( 12, 25, 28, 19, 16, 1, 8 );
         $_p = get_posts( array(
-	        'posts_per_page' => 2,
-	        'post__in'       => array( 12, 25, 28, 19, 16 ),
-	        'order'          => 'post__in'
+	        'posts_per_page' => $posts_per_page,
+	        'post__in'       => $post_ids,
+	        'order'          => 'post__in',
+	        'paged'          => $paged
         ) );
 		foreach ( $_p as $post ) {
 			setup_postdata($post);
@@ -26,11 +30,9 @@
                 <div class="col-md-4"></div>
                 <div class="col-md-8">
 				    <?php
-				    the_posts_pagination(array(
-					    "screen_reader_text"=>' ',
-					    "prev_text" => "New Posts",
-					    "next_test" => "Old Posts"
-				    ));
+                    echo paginate_links(array(
+	                    'total' => ceil( count( $post_ids ) / $posts_per_page )
+                    ));
 				    ?>
                 </div>
             </div>
