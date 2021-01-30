@@ -12,9 +12,23 @@
 		$posts_per_page = 3;
 		$post_ids = array( 12, 25, 28, 19, 16, 1, 8 );
 		$_p = new WP_Query( array(
-				'category_name'  => 'Uncategorized',
-				'posts_per_page' => 3,
-				'paged'          => $paged
+//				'category_name'  => 'Uncategorized',
+				'posts_per_page' => $posts_per_page,
+//				'tag'       => 'special',
+				'paged'     => $paged,
+				'tax_query' => array(
+				    'relation'=>'OR',
+                    array(
+                       'taxonomy'=>'category',
+                        'field'=>'slug',
+                        'terms'=>array('Uncategorized')
+                    ),
+					array(
+						'taxonomy'=>'post_tag',
+						'field'=>'slug',
+						'terms'=>array('special')
+					)
+                )
 			)
 		);
 		while ( $_p->have_posts() ) {
