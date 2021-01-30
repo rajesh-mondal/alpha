@@ -13,8 +13,8 @@
 		$post_ids = array( 12, 25, 28, 19, 16, 1, 8 );
 		$_p = new WP_Query( array(
 //				'category_name'  => 'Uncategorized',
-				'posts_per_page' => $posts_per_page,
-//				'tag'       => 'special',
+//				'posts_per_page' => $posts_per_page,
+				'tag'       => 'special',
 				'paged'     => $paged,
 				'tax_query' => array(
 				    'relation'=>'OR',
